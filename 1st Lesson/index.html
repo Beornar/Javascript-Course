@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap"
+      rel="stylesheet"
+    />
+    <title>My CV</title>
+    <!-- <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap");
+    </style> -->
+    <style>
+      :root {
+        --primary-color: #f4f4f4;
+        --secondary-color: #333;
+        --list-heading: red;
+        --list-item: blue;
+        --primary-background: #6096b4;
+        --secondary-background: #bdcdd6;
+        --bold-font: 900;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        margin: 10px;
+        padding: 10px 20px;
+      }
+      .working-box {
+        /* float:left; */
+        border: 3px solid red;
+        /* background-image: url(images/wood-background.jpeg); */
+        /* background: url(images/wood-background.jpeg) no-repeat center
+          center/cover; */
+        background-color: var(--primary-background);
+        color: var(--primary-color);
+      }
+      .courses-box {
+        float: right;
+        /* background-image: url(images/lake-background.avif);
+        height: 500px;
+        width: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center; */
+        background-color: var(--secondary-background);
+        color: var(--secondary-color);
+      }
+      .hobbies-box {
+        /* float:left; */
+        background-color: var(--list-item);
+        color: var(--list-heading);
+      }
+      .contact-box {
+        /* float:right; */
+        /* color: #f4f4f4; */
+        /* color: var(--primary-color);
+        height: 1000px;
+        width: 1600px;
+        background: url(images/blue-background.jpeg) no-repeat center
+          center/cover;
+        background-attachment: fixed; */
+        background-color: var(--primary-background);
+        color: var(--list-heading);
+      }
+      /* .clr{
+        clear: both;
+      } */
+
+      p {
+        font-weight: var(--bold-font);
+      }
+      .btn {
+        background-color: var(--secondary-background);
+        color: var(--secondary-color);
+      }
+      .btn:hover {
+        transition: 0.3;
+        opacity: 0.7;
+      }
+      .navbar {
+        padding: 20px;
+        background-color: var(--primary-background);
+        color: var(--primary-color);
+        overflow: auto;
+        list-style: none;
+      }
+      .navbar li {
+        float: left;
+        padding: 20px;
+      }
+
+      .navbar li a {
+        padding: 20px;
+        transition: 0.4s;
+        text-decoration: none;
+      }
+      .navbar li a:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+      a:visited {
+        color: var(--primary-color);
+      }
+      .sidebar {
+        padding: 30px;
+        background-color: var(--secondary-background);
+        color: var(--secondary-color);
+        overflow: auto;
+        list-style: none;
+      }
+      .sidebar li{
+        padding: 10px;
+      }
+      .sidebar li a {
+        text-decoration: none;
+      }
+      .sidebar li a:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experience.html">Working Experience</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="contact.html">Contact Me!</a></li>
+      </ul>
+    </nav>
+    <!-- <aside>
+      <ul class="sidebar">
+        <li><a href="">Home</a></li>
+        <li><a href="">Profile</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </aside> -->
+    <div class="box">
+      <img
+        src="data:image/jpeg;base64,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"
+        alt="monalisa-portrait"
+      />
+      <h3>Frontend Developer</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem corrupti
+        voluptatem laboriosam obcaecati placeat ea corporis accusamus quam
+        soluta laborum.
+      </p>
+    </div>
+    <hr />
+    <!-- <div class="box working-box">
+      <h1>Working Experience</h1>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Work</th>
+          <th>Position</th>
+        </tr>
+        <tr>
+          <td>2010-2012</td>
+          <td>Microsoft</td>
+          <td>Junior Software Engineer</td>
+        </tr>
+        <tr>
+          <td>2012-2015</td>
+          <td>Apple</td>
+          <td>Senior Software Engineer</td>
+        </tr>
+        <tr>
+          <td>2015-2020</td>
+          <td>Samsung</td>
+          <td>Frontend Developer</td>
+        </tr>
+      </table>
+    </div>
+    <hr />
+    <div class="box courses-box">
+      <h1>Courses</h1>
+      <ul>
+        <li>Introduction to HTML</li>
+        <li>CSS Introduction</li>
+        <li>Javascript</li>
+      </ul>
+    </div> -->
+    <div class="clr"></div>
+    <!-- <div class="box hobbies-box">
+      <hr />
+      <h1>Hobbies</h1>
+      <ol>
+        <li>Reading Books</li>
+        <li>Playing Basketball</li>
+        <li>Video Games</li>
+        <li>Beer</li>
+      </ol>
+    </div> -->
+
+    <hr />
+    <!-- <div class="box contact-box">
+      <h1>Contact Me</h1>
+      <form action="">
+        <label for="name">Name</label>
+        <input type="text" />
+        <br />
+        <label for="email">Email</label>
+        <input type="email" />
+        <br />
+        <textarea name="textarea" id="" cols="35" rows="10">
+Your Message...</textarea
+        >
+        <br />
+        <label for="checkbox">We will share this with hackers :)</label>
+        <input type="checkbox" />
+        <br />
+        <button class="btn" name="button" id="">Send</button>
+      </form>
+    </div> -->
+  </body>
+</html>

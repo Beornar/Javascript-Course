@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+  background: url(../images/image_2023-03-25_000356048.webp) no-repeat center
+    center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  padding:15px;
+}
+header h1 {
+  color: #f5cca0;
+  font-size: 2.5rem;
+}
+header p {
+  color: #f4f4f4;
+  font-size: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  background-color: #b99470;
+  border: 2px solid burlywood;
+  border-radius: 10px;
+  padding: 8px;
+  transition: 0.3s;
+  color: #5f6f52;
+}
+.btn:hover {
+  background-color: burlywood;
+}

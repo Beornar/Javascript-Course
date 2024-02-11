@@ -1,0 +1,124 @@
+
+body{
+    font-family: 'Hedvig Letters Serif', serif;
+}
+/* ul{
+    font-style: italic;
+}
+ol{
+    font-size: 20px;
+}
+h1{
+    text-align: center; font-style: italic;
+}
+li{
+    border: 1px solid green;
+} */
+:root {
+    --primary-color: #f4f4f4;
+    --secondary-color: #333;
+    --list-heading: red;
+    --list-item: blue;
+    --primary-background: #6096b4;
+    --secondary-background: #bdcdd6;
+    --bold-font: 900;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .box {
+    margin: 10px;
+    padding: 10px 20px;
+  }
+  .working-box {
+    /* float:left; */
+    border: 3px solid red;
+    /* background-image: url(images/wood-background.jpeg); */
+    /* background: url(images/wood-background.jpeg) no-repeat center
+      center/cover; */
+    background-color: var(--primary-background);
+    color: var(--primary-color);
+  }
+  .courses-box {
+    /* float: right;
+    /* background-image: url(images/lake-background.avif);
+    height: 500px;
+    width: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; */ */
+    background-color: var(--secondary-background);
+    color: var(--secondary-color);
+  }
+  .hobbies-box {
+    /* float:left; */
+    background-color: var(--list-item);
+    color: var(--list-heading);
+  }
+  .contact-box {
+    /* float:right; */
+    /* color: #f4f4f4; */
+    /* color: var(--primary-color);
+    height: 1000px;
+    width: 1600px;
+    background: url(images/blue-background.jpeg) no-repeat center
+      center/cover;
+    background-attachment: fixed; */
+    background-color: var(--primary-background);
+    color: var(--list-heading);
+  }
+
+  p {
+    font-weight: var(--bold-font);
+  }
+  .btn {
+    background-color: var(--secondary-background);
+    color: var(--secondary-color);
+  }
+  .btn:hover {
+    transition: 0.3;
+    opacity: 0.7;
+  }
+  .navbar {
+    padding: 20px;
+    background-color: var(--primary-background);
+    color: var(--primary-color);
+    overflow: auto;
+    list-style: none;
+  }
+  .navbar li {
+    float: left;
+    padding: 20px;
+  }
+
+  .navbar li a {
+    padding: 20px;
+    transition: 0.4s;
+    text-decoration: none;
+  }
+  .navbar li a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+  a:visited {
+    color: var(--primary-color);
+  }
+  .sidebar {
+    padding: 30px;
+    background-color: var(--secondary-background);
+    color: var(--secondary-color);
+    overflow: auto;
+    list-style: none;
+  }
+  .sidebar li{
+    padding: 10px;
+  }
+  .sidebar li a {
+    text-decoration: none;
+  }
+  .sidebar li a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Flex Container (Parent) */
+      .flex-container {
+        display: flex;
+        flex-direction: row; /* Öğeleri yatay olarak sırala */
+        justify-content: end; /* Öğeleri ana eksende etraflarında boşluk bırakarak hizala */
+        align-items: end; /* Öğeleri çapraz eksende ortala */
+        height: 200px;
+        border: 2px solid #333;
+        flex-wrap: wrap-reverse;
+      }
+
+      /* Flex Items (Children) */
+      .flex-item {
+        flex: 1; /* Tüm öğeler eşit miktarda alan kaplasın */
+        text-align: center;
+        padding: 10px;
+        background-color: lightblue;
+      }
+    </style>
+    <title>Flexbox Test</title>
+  </head>
+  <body>
+    <!-- Flex Container -->
+    <div class="flex-container">
+      <!-- Flex Items -->
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
+      <div class="flex-item">Item 4</div>
+      <div class="flex-item">Item 5</div>
+      <div class="flex-item">Item 6</div>
+      <div class="flex-item">Item 7</div>
+      <div class="flex-item">Item 8</div>
+    </div>
+  </body>
+</html>
