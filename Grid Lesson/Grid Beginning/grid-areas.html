@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header"
+        "nav main ."
+        ". main side"
+        "footer footer footer";
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #777;
+    color: white;
+    padding: 10px;
+}
+
+main {
+    grid-area: main;
+    background-color: #ddd;
+    padding: 10px;
+}
+
+aside {
+    grid-area: side;
+    background-color: #999;
+    color: white;
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>Main Content</main>
+        <aside>Side</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
