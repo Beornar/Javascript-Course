@@ -1,10 +1,19 @@
 .container {
+  width: 800px;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border: 2px solid black;
 }
 
-.container>* {
-  background-color: cadetblue;
+.white {
+  height: 100px;
+  width: 100px;
+  background-color: #f4f4f4;
+}
+
+.black {
+  height: 100px;
+  width: 100px;
+  background-color: black;
 }
