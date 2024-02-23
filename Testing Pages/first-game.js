@@ -5,13 +5,13 @@ function checkGuess() {
   const message = document.getElementById("message");
   
   if (guess === randomNumber) {
-    message.textContent = "Congratulations! You guessed the correct number!";
+    message.textContent = "Yeeey. You done it!";
     message.style.color = "green";
   } else if (guess < randomNumber) {
-    message.textContent = "Too low. Try again!";
+    message.textContent = "Try lower number!";
     message.style.color = "red";
   } else {
-    message.textContent = "Too high. Try again!";
+    message.textContent = "Try higher number!";
     message.style.color = "red";
   }
 }
