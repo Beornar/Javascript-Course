@@ -1,7 +1,5 @@
-// Generate random number between 1 and 100
 const randomNumber = Math.floor(Math.random() * 100) + 1;
 
-// Function to check user's guess
 function checkGuess() {
   const guess = parseInt(document.getElementById("guessField").value);
   const message = document.getElementById("message");
