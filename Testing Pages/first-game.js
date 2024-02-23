@@ -3,8 +3,8 @@ const randomNumber = Math.floor(Math.random() * 100) + 1;
 
 // Function to check user's guess
 function checkGuess() {
-  const guess = parseInt(document.getElementById('guessField').value);
-  const message = document.getElementById('message');
+  const guess = parseInt(document.getElementById("guessField").value);
+  const message = document.getElementById("message");
   
   if (guess === randomNumber) {
     message.textContent = "Congratulations! You guessed the correct number!";
