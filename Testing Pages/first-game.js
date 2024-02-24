@@ -7,11 +7,12 @@ function checkGuess() {
   if (guess === randomNumber) {
     message.textContent = "Yeeey. You done it!";
     message.style.color = "green";
-  } else if (guess < randomNumber) {
+  } else if (guess > randomNumber) {
     message.textContent = "Try a lower number!";
     message.style.color = "red";
   } else {
     message.textContent = "Try a higher number!";
     message.style.color = "red";
   }
+  console.log(randomNumber);
 }
