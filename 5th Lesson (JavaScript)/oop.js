@@ -53,4 +53,4 @@ const videoGame1 = new VideoGames("High On Life", 2022, "First Person Shooter", 
 const videoGame2 = new VideoGames("Lies of P", 2023, "Action Role-Play", "Neowiz Games");
 const videoGame3 = new VideoGames("Assassin's Creed Valhalla", 2020, "Action Role-Play", "Ubisoft");
 console.log(VideoGames);
-console.log(videoGame1, videoGame2, videoGame3);
+
