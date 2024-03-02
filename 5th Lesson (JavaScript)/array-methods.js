@@ -3,6 +3,7 @@ const students = [
         fullName: "Berkay Turna",
         age: 25,
         isDeleted: false,
+        score: 90,
         isActive: true,
         courses: ["JavaScript", "React", "Node.js"],
         instructors: [
@@ -14,6 +15,7 @@ const students = [
         fullName: "Cenk Grid Kaynak",
         age: 32,
         isDeleted: false,
+        score: 85,
         isActive: true,
         courses: ["JavaScript", "React Native", ".Net Core"],
         instructors: [
@@ -25,6 +27,7 @@ const students = [
         fullName: "Ali Riza Taskiran",
         age: 24,
         isDeleted: false,
+        score: 92,
         isActive: true,
         courses: ["Java", "Golang"],
         instructors: [
@@ -34,8 +37,9 @@ const students = [
     },
     {
         fullName: "Mert Kirant",
-        age: 32,
+        age: 23,
         isDeleted: false,
+        score: 88,
         isActive: true,
         courses: ["Expressjs", "Node.js"],
         instructors: [
@@ -45,8 +49,9 @@ const students = [
     },
     {
         fullName: "Firat Can Tas",
-        age: 26,
+        age: 24,
         isDeleted: false,
+        score: 60,
         isActive: false,
         courses: ["Expressjs", "Node.js", ".Net Core"],
         instructors: [
@@ -58,14 +63,21 @@ const students = [
         fullName: "Baris Peker",
         age: 38,
         isDeleted: true,
+        score: 75,
         isActive: false,
         courses: ["JavaScript", "HTNL"],
         instructors: [
             { fullName: "Orkun Durmaz", topics: ["JavaScript", "React"] },
             { fullName: "Onder Tarım", topics: ["React Native"] },
         ]
-    },
+    }
 ]
+const isAnyStudentOver40 = students.some((student) => student.age > 40);
+console.log(isAnyStudentOver40);
+
+const scoreOver82 = students.some((student) => student.score > 82);
+console.log(scoreOver82);
+
 
 // forEach
 // const forEachResult = students.forEach(
@@ -106,5 +118,9 @@ const students = [
 //     students.filter(student => !student.isDeleted && student.isActive)
 // );
 
-const oldStudents = students.filter(student => student.age > 30);
-console.log(oldStudents);
+// const oldStudents = students.filter(student => student.age > 30);
+// console.log(oldStudents);
+
+const numbers = [1, 5, 3, 9, 7, 10];
+const overZero = numbers.every((num) => num > 0);
+console.log(overZero);
