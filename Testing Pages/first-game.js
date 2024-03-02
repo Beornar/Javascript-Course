@@ -14,5 +14,4 @@ function checkGuess() {
     message.textContent = "Try a higher number!";
     message.style.color = "red";
   }
-  console.log(randomNumber);
 }

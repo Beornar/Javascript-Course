@@ -87,6 +87,23 @@ console.log(findStudent);
 const findStudentIndex = students.findIndex((student) => student.fullName === "Cenk Grid Kaynak");
 console.log(findStudentIndex);
 
+const findCourse = students.find((student) => student.courses.includes("React"));
+console.log(findCourse);
+
+const sortByScore = students.sort((student1, student2) => student1.score - student2.score);
+console.log(sortByScore);
+
+const sortByName = students.sort((student1, student2 ) => {
+    if (student1.fullName.toUpperCase() < student2.fullName.toUpperCase()){
+        return -1;
+    }else if (student1.fullName.toUpperCase() > student2.fullName.toUpperCase()){
+        return 1;
+    }else return 0;
+});
+// same sort by ternary
+// const sortByName = students.sort((student1, student2) => student1.fullName > student2.fullName ? 1:-1)
+console.log(sortByName);
+
 
 // forEach
 // const forEachResult = students.forEach(
