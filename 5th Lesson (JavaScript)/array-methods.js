@@ -65,7 +65,7 @@ const students = [
         isDeleted: true,
         score: 75,
         isActive: false,
-        courses: ["JavaScript", "HTNL"],
+        courses: ["JavaScript", "HTML"],
         instructors: [
             { fullName: "Orkun Durmaz", topics: ["JavaScript", "React"] },
             { fullName: "Onder Tarım", topics: ["React Native"] },
@@ -73,10 +73,13 @@ const students = [
     }
 ]
 const isAnyStudentOver40 = students.some((student) => student.age > 40);
-console.log(isAnyStudentOver40);
+console.log("Older than 40: " + isAnyStudentOver40);
 
 const scoreOver82 = students.some((student) => student.score > 82);
-console.log(scoreOver82);
+console.log("Higher score han 82: " + scoreOver82);
+
+const isStillActive = students.every((student) => student.isActive);
+console.log("All students active: " + isStillActive);
 
 
 // forEach
