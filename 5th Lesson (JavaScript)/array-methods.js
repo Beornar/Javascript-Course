@@ -81,6 +81,12 @@ console.log("Higher score han 82: " + scoreOver82);
 const isStillActive = students.every((student) => student.isActive);
 console.log("All students active: " + isStillActive);
 
+const findStudent = students.find((student) => student.fullName === "Cenk Grid Kaynak");
+console.log(findStudent);
+
+const findStudentIndex = students.findIndex((student) => student.fullName === "Cenk Grid Kaynak");
+console.log(findStudentIndex);
+
 
 // forEach
 // const forEachResult = students.forEach(
@@ -123,7 +129,3 @@ console.log("All students active: " + isStillActive);
 
 // const oldStudents = students.filter(student => student.age > 30);
 // console.log(oldStudents);
-
-const numbers = [1, 5, 3, 9, 7, 10];
-const overZero = numbers.every((num) => num > 0);
-console.log(overZero);
