@@ -38,9 +38,9 @@ body {
 }
 
 .k {
-    background-image: url(./img/crash.png);
+    background-image: url(./img/kick.png);
 }
 
 .l {
-    background-image: url(./img/kick.png);
+    background-image: url(./img/crash.png);
 }
