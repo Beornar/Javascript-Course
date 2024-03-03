@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+    background-color: #50727B;
+    color: #b3b3b3;
+}
+
+.h1 {
+    text-shadow: 3px 0 red;
+}
+
+.drum {
+    font-size: 5rem;
+    border: 5px solid black;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    color :#50727B;
+}
+
+.w {
+    background-image: url(./img/tom1.png);
+}
+
+.a {
+    background-image: url(./img/tom2.png);
+}
+
+.s {
+    background-image: url(./img/tom3.png);
+}
+
+.d {
+    background-image: url(./img/tom4.png);
+}
+
+.j {
+    background-image: url(./img/snare.png);
+}
+
+.k {
+    background-image: url(./img/crash.png);
+}
+
+.l {
+    background-image: url(./img/kick.png);
+}
