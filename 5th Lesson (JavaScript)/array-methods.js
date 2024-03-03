@@ -93,18 +93,23 @@ console.log(findCourse);
 const sortByScore = students.sort((student1, student2) => student1.score - student2.score);
 console.log(sortByScore);
 
-const sortByName = students.sort((student1, student2 ) => {
-    if (student1.fullName.toUpperCase() < student2.fullName.toUpperCase()){
+const sortByName = students.sort((student1, student2) => {
+    if (student1.fullName.toLowerCase() < student2.fullName.toLowerCase()) {
         return -1;
-    }else if (student1.fullName.toUpperCase() > student2.fullName.toUpperCase()){
+    } else if (student1.fullName.toLowerCase() > student2.fullName.toLowerCase()) {
         return 1;
-    }else return 0;
+    } else return 0;
 });
 // same sort by ternary
 // const sortByName = students.sort((student1, student2) => student1.fullName > student2.fullName ? 1:-1)
 console.log(sortByName);
 
-
+const activeStudents = students.reduce((acc, currentValue) => {
+    if (currentValue.isActive) {
+        acc.push(currentValue.fullName);
+    } return acc;
+}, [])
+console.log(activeStudents);
 // forEach
 // const forEachResult = students.forEach(
 //     (student, index, arr) => {
@@ -146,3 +151,14 @@ console.log(sortByName);
 
 // const oldStudents = students.filter(student => student.age > 30);
 // console.log(oldStudents);
+
+const numbers = [3, 9, 7, 6, 8, 10, 20, 23, 89, 97];
+
+const evenNumbers = numbers.filter((num) => num % 2 == 0);
+console.log(evenNumbers);
+
+const multipliedEvenNumbers = evenNumbers.map((num) => num * 5);
+console.log(multipliedEvenNumbers);
+
+const finalNumbers = multipliedEvenNumbers.reduce((acc, currentValue) => acc + currentValue, 0);
+console.log(finalNumbers);
