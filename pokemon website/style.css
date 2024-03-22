@@ -1,5 +1,24 @@
-.pokeball{
+.navbar {
+    display: flex;
     background-color: rgb(251, 27, 27);
+    height: 8vh;
+    align-items: center;
+    justify-content: space-between;
+    color: #f4f4f4;
+}
+
+.pokeball{
+    height: 5vh;
+}
+
+.nav-left {
+    padding-left: 70px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 50px;
+    padding-right: 10px;
 }
 
 .pokemon-grid {
