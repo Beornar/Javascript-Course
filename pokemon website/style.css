@@ -1,3 +1,7 @@
+.pokeball{
+    background-color: rgb(251, 27, 27);
+}
+
 .pokemon-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
