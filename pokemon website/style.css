@@ -39,3 +39,18 @@ img{
     height: 200px;
     width: 200px;
 }
+.footer-links i{
+    font-size: 2rem;
+    color: red;
+  }
+  .footer-links{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    gap: 30px;
+  }
+  .copyright{
+    text-align: center;
+    color: red;
+    font-size: 1.1rem;
+  }
