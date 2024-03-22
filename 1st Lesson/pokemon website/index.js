@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const pokemonGrid = document.getElementById("pokemonGrid");
 
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=30")
         .then((response) => response.json())
         .then((data) => {
             data.results.forEach((pokemon) => {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pokemonCard.classList.add("pokemon-card");
         pokemonCard.innerHTML = `
             <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-            <h3>${pokemon.name}</h3>
+            <h3>${pokemon.id} - ${pokemon.name}</h3>
             <p>Type: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
         `;
         pokemonGrid.appendChild(pokemonCard);
