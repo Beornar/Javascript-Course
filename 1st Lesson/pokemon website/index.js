@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
             <h3>${pokemon.name}</h3>
             <p>Type: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
-            <p>Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
         `;
         pokemonGrid.appendChild(pokemonCard);
     }
