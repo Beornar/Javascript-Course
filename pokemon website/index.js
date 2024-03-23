@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const pokemonCard = document.createElement("div");
         pokemonCard.classList.add("pokemon-card");
         pokemonCard.innerHTML = `
-            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+            <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}">
             <h3>${pokemon.id} - ${pokemon.name}</h3>
             <p>Type: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
         `;

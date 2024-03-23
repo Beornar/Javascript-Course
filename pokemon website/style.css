@@ -25,8 +25,8 @@
 .pokemon-grid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, 250px);
-    grid-template-rows: repeat(10, 350px);
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(10, 300px);
     gap: 10px;
 }
 
@@ -36,8 +36,8 @@
     text-align: center;
 }
 img{
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
 }
 .footer-links i{
     font-size: 2rem;
