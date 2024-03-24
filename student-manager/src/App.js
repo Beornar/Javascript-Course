@@ -3,10 +3,6 @@ import { useState } from 'react';
 
 function App() {
 
-  // const [studentName1, setStudentName1] = useState("Mert Kırant");
-  // const [studentName2, setStudentName2] = useState("Onur Ege Erkek");
-  // const [studentName3, setStudentName3] = useState("Ali Rıza Taşkıran");
-
   const [studentName, setStudentName] = useState("");
   const [course, setCourse] = useState("");
   const [instructor, setInstructor] = useState("");
@@ -15,21 +11,35 @@ function App() {
   const [courseInput, setCourseInput] = useState("");
   const [instructorInput, setInstructorInput] = useState("");
 
+  const [studentNameError, setStudentNameError] = useState("");
+  const [courseError, setCourseError] = useState("");
+  const [instructorError, setInstructorError] = useState("");
+
   return (
     <div className="app">
       <h1>Student Manager</h1>
 
       <p>Enter Student</p>
       <form action="">
-        <input type="text" placeholder='Student Name' onChange={(event) => setStudentNameInput(event.target.value)} />
-        <input type="text" placeholder='Course' onChange={(event) => setCourseInput(event.target.value)} />
-        <input type="text" placeholder='Instructor' onChange={(event) => setInstructorInput(event.target.value)} />
-        <br /><br />
+        <input type="text" id="studentNameId" placeholder='Student Name' value={studentNameInput} onChange={(event) => setStudentNameInput(event.target.value)} />
+        <p>{studentNameError}</p>
+        <input type="text" id="courseId" placeholder='Course' value={courseInput} onChange={(event) => setCourseInput(event.target.value)} />
+        <p>{courseError}</p>
+        <input type="text" id="instructorId" placeholder='Instructor' value={instructorInput} onChange={(event) => setInstructorInput(event.target.value)} />
+        <p>{instructorError}</p>
         <input type="submit" onClick={(event) => {
           event.preventDefault();
-          setStudentName(studentNameInput);
-          setCourse(courseInput);
-          setInstructor(instructorInput);
+          if (!studentNameInput || !courseInput || !instructorInput) {
+            setStudentNameError(studentNameInput.trim() ? "" : "Name can not be empty");
+            setCourseError(courseInput.trim() ? "" : "Course can not be empty");
+            setInstructorError(instructorInput.trim() ? "" : "Instructor can not be empty");
+          }
+          setStudentName(studentNameInput.trim());
+          setCourse(courseInput.trim());
+          setInstructor(instructorInput.trim());
+          setStudentNameInput("");
+          setCourseInput("");
+          setInstructorInput("");
         }} />
       </form>
       <br />
@@ -38,16 +48,6 @@ function App() {
         <li>{course}</li>
         <li>{instructor}</li>
       </div>
-
-
-      {/* <p>{studentName1}</p>
-      <button onClick={() => setStudentName1("Cenk Kaynak")}>Change Student Name</button>
-
-      <p>{studentName2}</p>
-      <button onClick={() => setStudentName2("Barkın Sayın")}>Change Student Name</button>
-
-      <p>{studentName3}</p>
-      <button onClick={() => setStudentName3("Berkay Turna")}>Change Student Name</button> */}
 
     </div>
   );
