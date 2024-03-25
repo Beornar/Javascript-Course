@@ -21,6 +21,8 @@ function App() {
 
       <p>Enter Student</p>
       <form className="student-form" action="">
+
+        {/* two way assign for studentName Input and setStudentNameInput */}
         <input type="text" id="studentNameId" placeholder='Student Name' value={studentNameInput} onChange={(event) => setStudentNameInput(event.target.value)} />
         <br />
         {studentNameError && <p>Please enter your name</p>}
@@ -33,14 +35,15 @@ function App() {
         <input type="submit" onClick={(event) => {
           event.preventDefault();
 
+          // there should be no errors before and after tries. errors are set to false
           setStudentNameError(false);
           setCourseError(false);
           setInstructorError(false);
 
+          // checking the errors
           if (!studentNameInput.trim() || !courseInput.trim() || !instructorInput.trim()) {
-            // setStudentNameError(studentNameInput.trim() ? "" : "Please enter your name");
-            // setCourseError(courseInput.trim() ? "" : "Please enter course");
-            // setInstructorError(instructorInput.trim() ? "" : "Please enter instructor name");
+
+            // checking the errors with empty fields
             !studentNameInput.trim() && setStudentNameError(true);
             !courseInput.trim() && setCourseError(true);
             !instructorInput.trim() && setInstructorError(true);
