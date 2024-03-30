@@ -27,7 +27,7 @@ function App() {
     <div className="app">
       <h1>Student Manager</h1>
 
-      <p>Enter Student</p>
+      <p>Enter Student Information</p>
       <form className="student-form" action="">
 
         {/* two way assign for studentName Input and setStudentNameInput */}
@@ -60,7 +60,12 @@ function App() {
             setCourse(courseInput.trim());
             setInstructor(instructorInput.trim());
 
-            setSetudents([...students, { name: studentNameInput, course: courseInput, instructor: instructorInput}])
+            setSetudents([...students, {
+              name: studentNameInput,
+              course: courseInput,
+              instructor: instructorInput,
+              id: Math.random().toString()
+            }])
 
             setStudentNameInput("");
             setCourseInput("");
@@ -79,6 +84,7 @@ function App() {
                   <li>Student: {student.name}</li>
                   <li>Course: {student.course}</li>
                   <li>Instructor: {student.instructor}</li>
+                  <br />
                 </div>
               )
             }
