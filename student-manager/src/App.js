@@ -3,6 +3,14 @@ import { useState } from 'react';
 
 function App() {
 
+  const [students, setSetudents] = useState([]);
+
+  // const studentList = [
+  //   { name: "Cenk", course: "React", instructor: "orkun", id: "001" },
+  //   { name: "Barkın", course: "HTML, CSS", instructor: "orkun", id: "002" },
+  //   { name: "Ali Rıza", course: "Javascript", instructor: "orkun", id: "003" }
+  // ];
+
   const [studentName, setStudentName] = useState("");
   const [course, setCourse] = useState("");
   const [instructor, setInstructor] = useState("");
@@ -51,6 +59,9 @@ function App() {
             setStudentName(studentNameInput.trim());
             setCourse(courseInput.trim());
             setInstructor(instructorInput.trim());
+
+            setSetudents([...students, { name: studentNameInput, course: courseInput, instructor: instructorInput}])
+
             setStudentNameInput("");
             setCourseInput("");
             setInstructorInput("");
@@ -58,10 +69,21 @@ function App() {
         }} />
       </form>
       <br />
-      <div className='student-card'>
-        <li>{studentName}</li>
-        <li>{course}</li>
-        <li>{instructor}</li>
+      <div className="student-list">
+        <h3>Student List</h3>
+        <div className='student-card'>
+          {students.map(
+            (student) => {
+              return (
+                <div className='student-card' key={student.id}>
+                  <li>Student: {student.name}</li>
+                  <li>Course: {student.course}</li>
+                  <li>Instructor: {student.instructor}</li>
+                </div>
+              )
+            }
+          )}
+        </div>
       </div>
 
     </div>
