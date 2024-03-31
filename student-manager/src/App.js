@@ -4,32 +4,20 @@ import { useState } from 'react';
 function App() {
 
   //data state
-  const [studentList, setStudentList] = useState(
-    [
-      { studentName: "Barkin Onay Sayin", course: "Onay Teknikleri", instructor: "Hicran Ertugral", id: "001" },
-      { studentName: "Ali Riza Taskiran", course: "JavaScript", instructor: "Buse Ugras", id: "002" },
-      { studentName: "Berkay Turna", course: "React", instructor: "Orun Durmaz", id: "003" },
-      { studentName: "Cenk Kaynak", course: "Html Css", instructor: "Orkun Durmaz", id: "004" },
-    ]
-  );
-
+  const [studentList, setStudentList] = useState([]);
   //input state
   const [student, setStudent] = useState({ studentName: "", course: "", instructor: "" });
 
   //error states
-  const [errors, setErrors] = useState({studentNameError: false, courseError: false, instructorError: false})
-  // const [studentNameError, setStudentNameError] = useState(false);
-  // const [courseError, setCourseError] = useState(false);
-  // const [instructorError, setInstructorError] = useState(false);
+  const [errors, setErrors] = useState({ studentNameError: false, courseError: false, instructorError: false })
+
 
   const addStudent = (event) => {
     event.preventDefault();
 
     //clear previous errors
-    // setStudentNameError(false);
-    // setCourseError(false);
-    // setInstructorError(false);
-    setErrors({studentNameError: false, courseError: false, instructorError: false})
+
+    setErrors({ studentNameError: false, courseError: false, instructorError: false })
 
     if (!student.studentName.trim() || !student.course.trim() || !student.instructor.trim()) {
       setErrors(
@@ -43,16 +31,23 @@ function App() {
     }
 
     //studentList state'i guncelle
+    // setStudentList(
+    //   [
+    //     ...studentList,
+    //     { ...student, id: Math.random().toString() }
+    //   ]
+    // )
+    
     setStudentList(
-      [
-        ...studentList,
-        { ...student, id: Math.random().toString() }
-      ]
+      function (prevStudentList) {
+        return [...prevStudentList, { ...student, id: Math.random().toString() }];
+      }
     )
+    setStudentList(prevStudentList => [...prevStudentList,{...student, id:Math.random().toString()}])
 
     //inputlari temizle
     setStudent({ studentName: "", course: "", instructor: "" });
-    setErrors({studentNameError: false, courseError: false, instructorError: false})
+    setErrors({ studentNameError: false, courseError: false, instructorError: false });
   }
 
   return (
