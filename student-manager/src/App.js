@@ -3,95 +3,115 @@ import { useState } from 'react';
 
 function App() {
 
-  const [students, setSetudents] = useState([]);
+  //data state
+  const [studentList, setStudentList] = useState(
+    [
+      { studentName: "Barkin Onay Sayin", course: "Onay Teknikleri", instructor: "Hicran Ertugral", id: "001" },
+      { studentName: "Ali Riza Taskiran", course: "JavaScript", instructor: "Buse Ugras", id: "002" },
+      { studentName: "Berkay Turna", course: "React", instructor: "Orun Durmaz", id: "003" },
+      { studentName: "Cenk Kaynak", course: "Html Css", instructor: "Orkun Durmaz", id: "004" },
+    ]
+  );
 
-  // const studentList = [
-  //   { name: "Cenk", course: "React", instructor: "orkun", id: "001" },
-  //   { name: "Barkın", course: "HTML, CSS", instructor: "orkun", id: "002" },
-  //   { name: "Ali Rıza", course: "Javascript", instructor: "orkun", id: "003" }
-  // ];
+  //input state
+  const [student, setStudent] = useState({ studentName: "", course: "", instructor: "" });
 
-  const [studentName, setStudentName] = useState("");
-  const [course, setCourse] = useState("");
-  const [instructor, setInstructor] = useState("");
+  //error states
+  const [errors, setErrors] = useState({studentNameError: false, courseError: false, instructorError: false})
+  // const [studentNameError, setStudentNameError] = useState(false);
+  // const [courseError, setCourseError] = useState(false);
+  // const [instructorError, setInstructorError] = useState(false);
 
-  const [studentNameInput, setStudentNameInput] = useState("");
-  const [courseInput, setCourseInput] = useState("");
-  const [instructorInput, setInstructorInput] = useState("");
+  const addStudent = (event) => {
+    event.preventDefault();
 
-  const [studentNameError, setStudentNameError] = useState(false);
-  const [courseError, setCourseError] = useState(false);
-  const [instructorError, setInstructorError] = useState(false);
+    //clear previous errors
+    // setStudentNameError(false);
+    // setCourseError(false);
+    // setInstructorError(false);
+    setErrors({studentNameError: false, courseError: false, instructorError: false})
+
+    if (!student.studentName.trim() || !student.course.trim() || !student.instructor.trim()) {
+      setErrors(
+        {
+          studentNameError: !student.studentName.trim(),
+          courseError: !student.course.trim(),
+          instructorError: !student.instructor.trim()
+        })
+      //else yerine early return pattern kullanilabilir
+      return;
+    }
+
+    //studentList state'i guncelle
+    setStudentList(
+      [
+        ...studentList,
+        { ...student, id: Math.random().toString() }
+      ]
+    )
+
+    //inputlari temizle
+    setStudent({ studentName: "", course: "", instructor: "" });
+    setErrors({studentNameError: false, courseError: false, instructorError: false})
+  }
 
   return (
+    /* JSX */
     <div className="app">
-      <h1>Student Manager</h1>
-
-      <p>Enter Student Information</p>
-      <form className="student-form" action="">
-
-        {/* two way assign for studentName Input and setStudentNameInput */}
-        <input type="text" id="studentNameId" placeholder='Student Name' value={studentNameInput} onChange={(event) => setStudentNameInput(event.target.value)} />
-        <br />
-        {studentNameError && <p>Please enter your name</p>}
-        <input type="text" id="courseId" placeholder='Course' value={courseInput} onChange={(event) => setCourseInput(event.target.value)} />
-        {courseError && <p>Please enter course name</p>}
-        <br />
-        <input type="text" id="instructorId" placeholder='Instructor' value={instructorInput} onChange={(event) => setInstructorInput(event.target.value)} />
-        {instructorError && <p>Please enter your instructor's name</p>}
-        <br />
-        <input type="submit" onClick={(event) => {
-          event.preventDefault();
-
-          // there should be no errors before and after tries. errors are set to false
-          setStudentNameError(false);
-          setCourseError(false);
-          setInstructorError(false);
-
-          // checking the errors
-          if (!studentNameInput.trim() || !courseInput.trim() || !instructorInput.trim()) {
-
-            // checking the errors with empty fields
-            !studentNameInput.trim() && setStudentNameError(true);
-            !courseInput.trim() && setCourseError(true);
-            !instructorInput.trim() && setInstructorError(true);
-          } else {
-            setStudentName(studentNameInput.trim());
-            setCourse(courseInput.trim());
-            setInstructor(instructorInput.trim());
-
-            setSetudents([...students, {
-              name: studentNameInput,
-              course: courseInput,
-              instructor: instructorInput,
-              id: Math.random().toString()
-            }])
-
-            setStudentNameInput("");
-            setCourseInput("");
-            setInstructorInput("");
-          }
-        }} />
+      <h2>Student Manager</h2>
+      <form className='student-form'>
+        {/* two way binding */}
+        <div className="input-control">
+          <input
+            type="text"
+            placeholder='Student Name'
+            value={student.studentName} //input'un degeri state'den gelsin
+            onChange={(event) => setStudent({ ...student, studentName: event.target.value })} //state'i bu inputun degeriyle guncelle
+          />
+          {/* conditional rendering */}
+          {errors.studentNameError && <p className="error input-error">Please enter a valid student name</p>}
+          <br /><br />
+        </div>
+        <div className="input-control">
+          <input
+            type="text"
+            placeholder='Course'
+            value={student.course} //input'un degeri state'den gelsin
+            onChange={(event) => setStudent({ ...student, course: event.target.value })} //state'i bu inputun degeriyle guncelle
+          />
+          {errors.courseError && <p className="error input-error">Please enter a valid course</p>}
+          <br /><br />
+        </div>
+        <div className="input-control">
+          <input
+            type="text"
+            placeholder='Instructor'
+            value={student.instructor} //input'un degeri state'den gelsin
+            onChange={(event) => setStudent({ ...student, instructor: event.target.value })} //state'i bu inputun degeriyle guncelle
+          />
+          {errors.instructorError && <p className="error input-error">Please enter a valid instructor</p>}
+          <br /><br />
+        </div>
+        <input
+          type="submit"
+          onClick={addStudent}
+        />
       </form>
-      <br />
       <div className="student-list">
-        <h3>Student List</h3>
-        <div className='student-card'>
-          {students.map(
-            (student) => {
-              return (
-                <div className='student-card' key={student.id}>
-                  <li>Student: {student.name}</li>
-                  <li>Course: {student.course}</li>
-                  <li>Instructor: {student.instructor}</li>
-                  <br />
-                </div>
-              )
-            }
+        <h3>Students</h3>
+        <div className="student-card">
+          {studentList.map(
+            ({ studentName, course, instructor, id }) =>
+            (<div className="student-card" key={id}>
+              <ul>
+                <li>{studentName}</li>
+                <li>{course}</li>
+                <li>{instructor}</li>
+              </ul>
+            </div>)
           )}
         </div>
       </div>
-
     </div>
   );
 }
