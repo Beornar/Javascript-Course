@@ -1,6 +1,8 @@
 import './App.css';
 import { useState } from 'react';
 
+//her bir kartın üstüne silme butonu koy, header koy(student manager solda yazacak, sağda navbar ama işlemsiz)
+
 function App() {
 
   //data state
