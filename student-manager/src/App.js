@@ -33,94 +33,92 @@ function App() {
     }
 
     //studentList state'i guncelle
-    // setStudentList(
-    //   [
-    //     ...studentList,
-    //     { ...student, id: Math.random().toString() }
-    //   ]
-    // )
-
     setStudentList(
-      function (prevStudentList) {
-        return [...prevStudentList, { ...student, id: Math.random().toString() }];
-      }
+      [
+        ...studentList,
+        { ...student, id: Math.random().toString() }
+      ]
     )
-    setStudentList(prevStudentList => [...prevStudentList, { ...student, id: Math.random().toString() }])
+
+    // setStudentList(
+    //   function (prevStudentList) {
+    //     return [...prevStudentList, { ...student, id: Math.random().toString() }];
+    //   }
+    // )
+    // setStudentList(prevStudentList => [...prevStudentList, { ...student, id: Math.random().toString() }])
 
     //inputlari temizle
     setStudent({ studentName: "", course: "", instructor: "" });
     setErrors({ studentNameError: false, courseError: false, instructorError: false });
   }
 
-  const [number, setNumber] = useState(10);
 
-  const increase = () => setNumber(number+1);
-  const decrease = () => setNumber(number-1);
+  const removeStudent = (id) => {
+    setStudentList(prevStudentList => prevStudentList.filter(student => student.id !== id));
+  };
+
 
 
   return (
     /* JSX */
-    <div>
-      <p>{number}</p>
-      <button onClick={increase}>Increase</button>
-      <button onClick={decrease}>Decrease</button>
+
+    <div className="app">
+      <h2>Student Manager</h2>
+      <form className='student-form'>
+        {/* two way binding */}
+        <div className="input-control">
+          <input
+            type="text"
+            placeholder='Student Name'
+            value={student.studentName} //input'un degeri state'den gelsin
+            onChange={(event) => setStudent({ ...student, studentName: event.target.value })} //state'i bu inputun degeriyle guncelle
+          />
+          {/* conditional rendering */}
+          {errors.studentNameError && <p className="error input-error">Please enter a valid student name</p>}
+          <br /><br />
+        </div>
+        <div className="input-control">
+          <input
+            type="text"
+            placeholder='Course'
+            value={student.course} //input'un degeri state'den gelsin
+            onChange={(event) => setStudent({ ...student, course: event.target.value })} //state'i bu inputun degeriyle guncelle
+          />
+          {errors.courseError && <p className="error input-error">Please enter a valid course</p>}
+          <br /><br />
+        </div>
+        <div className="input-control">
+          <input
+            type="text"
+            placeholder='Instructor'
+            value={student.instructor} //input'un degeri state'den gelsin
+            onChange={(event) => setStudent({ ...student, instructor: event.target.value })} //state'i bu inputun degeriyle guncelle
+          />
+          {errors.instructorError && <p className="error input-error">Please enter a valid instructor</p>}
+          <br /><br />
+        </div>
+        <input
+          type="submit"
+          onClick={addStudent}
+        />
+      </form>
+      <div className="student-list">
+        <h3>Students</h3>
+        <div className="student-card">
+          {studentList.map(
+            ({ studentName, course, instructor, id }) =>
+            (<div className="student-card" key={id}>
+              <ul>
+                <li>{studentName}</li>
+                <li>{course}</li>
+                <li>{instructor}</li>
+              </ul>
+              <button onClick={() => removeStudent(id)}>Delete</button>
+            </div>)
+          )}
+        </div>
+      </div>
     </div>
-    // <div className="app">
-    //   <h2>Student Manager</h2>
-    //   <form className='student-form'>
-    //     {/* two way binding */}
-    //     <div className="input-control">
-    //       <input
-    //         type="text"
-    //         placeholder='Student Name'
-    //         value={student.studentName} //input'un degeri state'den gelsin
-    //         onChange={(event) => setStudent({ ...student, studentName: event.target.value })} //state'i bu inputun degeriyle guncelle
-    //       />
-    //       {/* conditional rendering */}
-    //       {errors.studentNameError && <p className="error input-error">Please enter a valid student name</p>}
-    //       <br /><br />
-    //     </div>
-    //     <div className="input-control">
-    //       <input
-    //         type="text"
-    //         placeholder='Course'
-    //         value={student.course} //input'un degeri state'den gelsin
-    //         onChange={(event) => setStudent({ ...student, course: event.target.value })} //state'i bu inputun degeriyle guncelle
-    //       />
-    //       {errors.courseError && <p className="error input-error">Please enter a valid course</p>}
-    //       <br /><br />
-    //     </div>
-    //     <div className="input-control">
-    //       <input
-    //         type="text"
-    //         placeholder='Instructor'
-    //         value={student.instructor} //input'un degeri state'den gelsin
-    //         onChange={(event) => setStudent({ ...student, instructor: event.target.value })} //state'i bu inputun degeriyle guncelle
-    //       />
-    //       {errors.instructorError && <p className="error input-error">Please enter a valid instructor</p>}
-    //       <br /><br />
-    //     </div>
-    //     <input
-    //       type="submit"
-    //       onClick={addStudent}
-    //     />
-    //   </form>
-    //   <div className="student-list">
-    //     <h3>Students</h3>
-    //     <div className="student-card">
-    //       {studentList.map(
-    //         ({ studentName, course, instructor, id }) =>
-    //         (<div className="student-card" key={id}>
-    //           <ul>
-    //             <li>{studentName}</li>
-    //             <li>{course}</li>
-    //             <li>{instructor}</li>
-    //           </ul>
-    //         </div>)
-    //       )}
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 
