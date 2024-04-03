@@ -39,19 +39,12 @@ function App() {
       ]
     )
 
-    // setStudentList(
-    //   function (prevStudentList) {
-    //     return [...prevStudentList, { ...student, id: Math.random().toString() }];
-    //   }
-    // )
-    // setStudentList(prevStudentList => [...prevStudentList, { ...student, id: Math.random().toString() }])
-
     //inputlari temizle
     setStudent({ studentName: "", course: "", instructor: "" });
     setErrors({ studentNameError: false, courseError: false, instructorError: false });
   }
 
-
+  // student silme fonksiyonu
   const removeStudent = (id) => {
     setStudentList(prevStudentList => prevStudentList.filter(student => student.id !== id));
   };
@@ -112,6 +105,7 @@ function App() {
                 <li>{course}</li>
                 <li>{instructor}</li>
               </ul>
+              {/* silme fonksiyonunu çalıştıracak olan "Delete" butonu */}
               <button onClick={() => removeStudent(id)}>Delete</button>
             </div>)
           )}
