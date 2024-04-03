@@ -9,7 +9,6 @@ function App() {
   const [studentList, setStudentList] = useState([]);
   //input state
   const [student, setStudent] = useState({ studentName: "", course: "", instructor: "" });
-
   //error states
   const [errors, setErrors] = useState({ studentNameError: false, courseError: false, instructorError: false })
 
@@ -28,7 +27,7 @@ function App() {
           courseError: !student.course.trim(),
           instructorError: !student.instructor.trim()
         })
-      //else yerine early return pattern kullanilabilir
+
       return;
     }
 
