@@ -49,7 +49,10 @@ function App() {
     setStudentList(prevStudentList => prevStudentList.filter(student => student.id !== id));
   };
 
+  // const [number, setNumber] = useState(10);
 
+  // const incrementNumber = () => setNumber(number + 5);
+  // const decrementNumber = () => setNumber(number - 5);
 
   return (
     /* JSX */
@@ -112,6 +115,39 @@ function App() {
         </div>
       </div>
     </div>
+  //   <div>
+
+  // <p>{number}</p>
+  // <button onClick={() => {
+  //   // setNumber(number + 5);
+  //   // setNumber(number + 5);
+  //   // setNumber(number + 5);
+  //   // setNumber(number + 5);
+    
+  //   //prevState
+  //   setNumber(
+  //     (prevNumber) => {
+  //       return prevNumber + 5
+  //     }
+  //     );
+  //     setNumber(
+  //       (prevNumber) => {
+  //         return prevNumber + 5
+  //       }
+  //       );
+  //       setNumber(
+  //         (prevNumber) => {
+  //           return prevNumber + 5
+  //         }
+  //         );
+  //         setNumber(
+  //           (prevNumber) => {
+  //             return prevNumber + 5
+  //           }
+  //           );
+  //         }}>Increment +5</button>
+  // <button onClick={decrementNumber}>Decrement -5</button>
+  //         </div>
   );
 }
 
