@@ -25,3 +25,19 @@ console.log(colors);
 console.log(otherColors);
 
 
+let person1 = {
+    name: "Cenk",
+    age:32
+}
+
+let person2 = person1;
+
+person2.name="Berkay";
+
+console.log(person1);
+console.log(person2);
+
+let person3 = {...person1};
+person3.name = "Ali Rıza";
+
+console.log(person3);
