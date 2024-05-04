@@ -25,7 +25,7 @@ const StudentForm = ({ addStudent }) => {
         }
 
         addStudent({ ...studentInput, id: Date.now().toString() });
-
+        
         //inputlari temizle
         setStudentInput({ studentName: "", course: "", instructor: "" });
         setError({ studentNameError: false, courseError: false, instructorError: false });
