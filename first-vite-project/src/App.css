@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  text-decoration: none;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
@@ -10,7 +12,7 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 5px 15px;
-  background-color: cadetblue;
+  background-color: brown;
   color: #f4f4f4;
   margin-bottom: 50px;
 }
@@ -18,4 +20,13 @@ header{
 nav ul{
   display: flex;
   gap: 15px;
+}
+
+nav ul a{
+  color: #f4f4f4;
+}
+nav ul a:hover{
+  border-bottom: 2px solid #f4f4f4;
+  transition: .5s;
+  opacity: .8;
 }
