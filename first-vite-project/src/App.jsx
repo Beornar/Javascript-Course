@@ -3,8 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/shared/header/Header.jsx'
-import StudentList from './app/student-list/StudentList.jsx'
-import StudentForm from './app/student-form/StudentForm.jsx'
+import StudentList from './app/student/student-list/StudentList.jsx'
+import StudentForm from './app/student/student-form/StudentForm.jsx'
 
 function App() {
 
