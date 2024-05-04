@@ -1,8 +1,21 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
   text-align: center;
 }
 
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  background-color: cadetblue;
+  color: #f4f4f4;
+  margin-bottom: 50px;
+}
 
+nav ul{
+  display: flex;
+  gap: 15px;
+}

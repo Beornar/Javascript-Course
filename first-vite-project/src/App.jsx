@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/shared/Header.jsx'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <main>
+      <Header/>
       <form action="" className='student-form'>
         <div className='input-control'>
           <input type="text" placeholder='Student Name'
