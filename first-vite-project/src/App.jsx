@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Header from './components/shared/Header.jsx'
+import Header from './components/shared/header/Header.jsx'
+import StudentList from './app/student-list/StudentList.jsx'
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
     setError({ studentNameError: false, courseError: false, instructorError: false })
 
     if (studentInput.studentName.trim() && studentInput.course.trim() && studentInput.instructor.trim()) {
-      setStudentList([...studentList, {...studentInput, id: Date.now().toString()}])
+      setStudentList([...studentList, { ...studentInput, id: Date.now().toString() }])
 
     } else {
       setError({ studentNameError: true, courseError: true, instructorError: true })
@@ -41,7 +42,7 @@ function App() {
 
   return (
     <main>
-      <Header/>
+      <Header title={"Student Manager"} navElements={["Home", "About Us", "Contact"]} />
       <form action="" className='student-form'>
         <div className='input-control'>
           <input type="text" placeholder='Student Name'
@@ -66,23 +67,9 @@ function App() {
           {error.instructorError && <p className='input-error'>Enter a valid instructor</p>}
         </div>
       </form>
-      <input type="submit" onClick={addStudent}/>
+      <input type="submit" onClick={addStudent} />
 
-      <div className='student-list'>
-        <h3>Student List</h3>
-        <div className='student-card'>
-          {studentList.map(
-            ({ studentName, course, instructor, id }) =>
-            (<div className="student-card" key={id}>
-              <ul>
-                <li>{studentName}</li>
-                <li>{course}</li>
-                <li>{instructor}</li>
-              </ul>
-            </div>)
-          )}
-        </div>
-      </div>
+      <StudentList studentList={studentList} />
 
     </main>
   )
