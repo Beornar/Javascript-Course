@@ -30,9 +30,9 @@ function App() {
   return (
     <main>
       <Header title={"Student Manager"} navElements={["Home", "About Us", "Contact"]} />
-      
+      <br />
       <StudentForm addStudent={addStudent} />
-
+      <br />
       <StudentList studentList={studentList} />
 
     </main>

@@ -37,7 +37,7 @@ const StudentForm = ({ addStudent }) => {
                 <div className='input-control'>
                     <input type="text" placeholder='Student Name'
                         value={studentInput.studentName}
-                        onChange={(event) => setStudentInput({ ...studentInput, studentName: event.target.value })} />
+                        onChange={(event) => setStudentInput(prevStudentInput => ({...prevStudentInput, studentName: event.target.value}))} />
                     {error.studentNameError && <p className='input-error'>Enter a valid student name</p>}
                 </div>
             </form>
