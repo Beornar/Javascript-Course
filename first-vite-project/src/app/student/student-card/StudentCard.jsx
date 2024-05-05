@@ -13,10 +13,5 @@ const StudentCard = ({ student }) => {
 
 }
 
-StudentCard.defaultProps = {
-    studentName: "Default Name",
-    course: "Default Course",
-    instructor: "Default Instructor"
-}
 
 export default StudentCard;

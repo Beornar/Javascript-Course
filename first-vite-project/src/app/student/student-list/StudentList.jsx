@@ -1,4 +1,3 @@
-import propTypes from 'prop-types';
 import StudentCard from "../student-card/StudentCard.jsx";
 
 const StudentList = ({studentList}) => {

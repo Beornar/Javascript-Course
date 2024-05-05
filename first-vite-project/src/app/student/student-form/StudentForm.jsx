@@ -24,11 +24,11 @@ const StudentForm = ({ addStudent }) => {
             return;
         }
 
-        addStudent({ ...studentInput, id: Date.now().toString() });
-        
+        addStudent(studentInput);
+
         //inputlari temizle
         setStudentInput({ studentName: "", course: "", instructor: "" });
-        setError({ studentNameError: false, courseError: false, instructorError: false });
+
     }
 
     return (
@@ -37,7 +37,7 @@ const StudentForm = ({ addStudent }) => {
                 <div className='input-control'>
                     <input type="text" placeholder='Student Name'
                         value={studentInput.studentName}
-                        onChange={(event) => setStudentInput(prevStudentInput => ({...prevStudentInput, studentName: event.target.value}))} />
+                        onChange={(event) => setStudentInput(prevStudentInput => ({ ...prevStudentInput, studentName: event.target.value }))} />
                     {error.studentNameError && <p className='input-error'>Enter a valid student name</p>}
                 </div>
             </form>

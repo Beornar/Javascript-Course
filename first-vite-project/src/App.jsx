@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/shared/header/Header.jsx'
 import StudentList from './app/student/student-list/StudentList.jsx'
@@ -23,12 +21,13 @@ function App() {
     },
   ]);
 
-  const addStudent = (newStudent) => {
-    setStudentList([...studentList, newStudent]);
+  const addStudent = (student) => {
+    setStudentList(prevStudentList => [...prevStudentList, { ...student, id: Date.now().toString() }])
   }
 
   return (
     <main>
+
       <Header title={"Student Manager"} navElements={["Home", "About Us", "Contact"]} />
       <br />
       <StudentForm addStudent={addStudent} />
