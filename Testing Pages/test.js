@@ -13,3 +13,19 @@
 // let firstChar = askName.slice(0,1).toUpperCase();
 // let restOfName = askName.slice(1).toLocaleLowerCase();
 // console.log(firstChar+restOfName);
+
+// const bmiCalculator = (weight, height) => {
+//     return weight/(height*height);
+// }
+
+// let bmi = bmiCalculator(65, 1.8);
+
+// console.log(bmi);
+
+const guestList = ["Cenk", "Belo"];
+
+let guestName = prompt("Enter your name");
+
+if (guestList.includes(guestName)) {
+    alert("Welcome!");
+} else alert("You need to leave.");
