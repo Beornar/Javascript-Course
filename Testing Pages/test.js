@@ -22,10 +22,40 @@
 
 // console.log(bmi);
 
-const guestList = ["Cenk", "Belo"];
+// const guestList = ["Cenk", "Belo"];
 
-let guestName = prompt("Enter your name");
+// let guestName = prompt("Enter your name");
 
-if (guestList.includes(guestName)) {
-    alert("Welcome!");
-} else alert("You need to leave.");
+// if (guestList.includes(guestName)) {
+//     alert("Welcome!");
+// } else alert("You need to leave.");
+
+// let arr = [];
+// let count = 1;
+
+// const fizzBuzz = () => {
+//     if (count % 3 == 0 && count % 5 == 0) arr.push("Fizzbuzz");
+//     else if (count % 3 == 0) arr.push("Fizz");
+//     else if (count % 5 == 0) arr.push("Buzz");
+//     else arr.push(count);
+//     count++;
+//     console.log(arr);
+// }
+
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+// fizzBuzz();
+
+
