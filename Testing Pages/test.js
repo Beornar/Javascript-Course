@@ -59,3 +59,6 @@
 // fizzBuzz();
 
 
+let names = ["Angela", "Ben", "Jenny", "Michael", "Chloe"];
+let randomNum = Math.floor(Math.random() * (names.length));
+console.log(names[randomNum]);
