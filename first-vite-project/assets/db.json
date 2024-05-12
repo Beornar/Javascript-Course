@@ -1,28 +1,28 @@
 {
-    "students": [
-        {
-            "studentName": "Barkın Onay Sayın",
-            "course": "React",
-            "instructor": "Hicran Ertuğral",
-            "id": "001"
-        },
-        {
-            "studentName": "Onur Ege Erkallbek",
-            "course": "JavaScript",
-            "instructor": "Buse Uğraş",
-            "id": "002"
-        },
-        {
-            "studentName": "Berkay Turna",
-            "course": "React",
-            "instructor": "Orun Durmaz",
-            "id": "003"
-        },
-        {
-            "studentName": "Cenk Kaynak",
-            "course": "Html Css",
-            "instructor": "Orkun Durmaz",
-            "id": "004"
-        }
-    ]
+  "students": [
+    {
+      "studentName": "Barkın Onay Sayın",
+      "course": "React",
+      "instructor": "Hicran Ertuğral",
+      "id": "001"
+    },
+    {
+      "studentName": "Onur Ege Erkallbek",
+      "course": "JavaScript",
+      "instructor": "Buse Uğraş",
+      "id": "002"
+    },
+    {
+      "studentName": "Berkay Turna",
+      "course": "React",
+      "instructor": "Orun Durmaz",
+      "id": "003"
+    },
+    {
+      "studentName": "Cenk Kaynak",
+      "course": "Html Css",
+      "instructor": "Orkun Durmaz",
+      "id": "004"
+    }
+  ]
 }
