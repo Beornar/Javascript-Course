@@ -3,8 +3,8 @@ import { useEffect } from "react";
 const StudentCard = ({ student, deleteStudent }) => {
     useEffect(
         () => {
-            console.log(`${student.id} mounted`);
-            return () => console.log(`${student.id} unmounted`);
+            // console.log(`${student.id} mounted`);
+            // return () => console.log(`${student.id} unmounted`);
         },
         []
     );
