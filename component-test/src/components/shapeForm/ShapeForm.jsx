@@ -1,7 +1,11 @@
 import React from 'react'
+import { useContext } from 'react';
 import { useState } from 'react';
+import { ShapeContext } from '../../contexts/shapeContexts/ShapeContext';
 
-const ShapeForm = ({ createShape }) => {
+const ShapeForm = () => {
+
+    const {createShape} = useContext(ShapeContext);
 
     const [shapeType, setShapeType] = useState({ shapeName: "", shapeColor: "" });
 

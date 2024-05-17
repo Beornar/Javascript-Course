@@ -3,21 +3,22 @@ import './App.css'
 import ShapeForm from './components/shapeForm/ShapeForm';
 import ShapeList from './components/shapeList/ShapeList';
 import Header from './components/shared/header/Header';
-import useShape from './hooks/shape/useShape';
+import { ShapeProvider } from './contexts/shapeContexts/ShapeContext';
 
 
 function App() {
-  const {createShape, shapeList} = useShape();
 
 
   return (
     <>
       <Header />
-      <main>
-        <ShapeForm createShape={createShape} />
+      <ShapeProvider>
+        <main>
+          <ShapeForm />
 
-        <ShapeList shapeList={shapeList} />
-      </main>
+          <ShapeList />
+        </main>
+      </ShapeProvider>
     </>
   )
 }
