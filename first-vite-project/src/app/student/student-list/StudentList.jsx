@@ -1,11 +1,16 @@
-import StudentCard from "../student-card/StudentCard"
+import { useContext } from "react";
+import StudentContext from "../../../hooks/contexts/student/StudentContext";
+import StudentCard from "../student-card/StudentCard";
 
-const StudentList = ({ studentList, deleteStudent }) => {
+
+const StudentList = () => {
+
+    const {studentList} = useContext(StudentContext);
     return (
         <div className="student-list-container">
             <div className="student-list">
                 {studentList.map(student => {
-                    return <StudentCard student={student} deleteStudent={deleteStudent} key={student.id} />
+                    return <StudentCard student={student} key={student.id} />
                 })}
             </div>
         </div>

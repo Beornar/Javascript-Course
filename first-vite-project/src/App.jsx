@@ -1,17 +1,10 @@
-import { useEffect, useState } from 'react';
 import './App.css';
+import StudentForm from './app/student/student-form/StudentForm.jsx';
 import StudentList from './app/student/student-list/StudentList.jsx';
 import Header from "./components/shared/header/Header.jsx";
-import StudentForm from './app/student/student-form/StudentForm.jsx';
-import axios from "axios";
-import useStudents from './hooks/students/useStudents';
-import StudentContext from './hooks/contexts/student/StudentContext';
+import { StudentProvider } from './hooks/contexts/student/StudentContext';
 
 function App() {
-
-
-
-
 
 
   return (
@@ -20,9 +13,9 @@ function App() {
       <Header title={"Student Manager"} navElements={["Home", "About Us", "Contact"]} />
       <br />
       <main>
-        <StudentForm createStudent={createStudent} />
+        <StudentForm />
         <br />
-        <StudentList studentList={studentList} deleteStudent={deleteStudent} />
+        <StudentList />
       </main>
     </StudentProvider>
     </>

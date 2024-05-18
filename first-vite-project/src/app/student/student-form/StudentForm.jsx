@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import StudentContext from "../../../hooks/contexts/student/StudentContext";
 
-const StudentForm = ({ createStudent }) => {
+const StudentForm = () => {
+
+    const { createStudent } = useContext(StudentContext);
 
     const [studentInput, setStudentInput] = useState({ studentName: "", course: "", instructor: "" });
     const [studentInputErr, setStudentInputErr] = useState({ studentName: false, course: false, instructor: false });
@@ -24,6 +27,7 @@ const StudentForm = ({ createStudent }) => {
             !studentInput.instructor.trim() && setStudentInputErr(prevStudentInputErr => ({ ...prevStudentInputErr, instructor: true }));
         }
     }
+
 
     return (
         <form action="" className="student-form">

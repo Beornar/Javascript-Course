@@ -1,7 +1,5 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect } from "react";
 import useStudents from "../../students/useStudents";
-import { useState } from "react";
-import { useEffect } from "react";
 
 
 export const StudentContext = createContext();

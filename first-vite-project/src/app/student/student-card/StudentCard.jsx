@@ -1,13 +1,9 @@
-import { useEffect } from "react";
+import { useContext } from "react";
+import StudentContext from "../../../hooks/contexts/student/StudentContext";
 
-const StudentCard = ({ student, deleteStudent }) => {
-    useEffect(
-        () => {
-            // console.log(`${student.id} mounted`);
-            // return () => console.log(`${student.id} unmounted`);
-        },
-        []
-    );
+const StudentCard = ({ student }) => {
+
+    const {deleteStudent} = useContext(StudentContext);
 
     return (
         <div className="student-card">
