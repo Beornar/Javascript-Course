@@ -5,7 +5,7 @@ import useStudents from "../../students/useStudents";
 export const StudentContext = createContext();
 
 export const StudentProvider = ({ children }) => {
-    const { studentList, getStudents, createStudent, deleteStudent } = useStudents();
+    const { studentList, isLoading, getStudents, createStudent, deleteStudent } = useStudents();
 
     useEffect(
         () => {
@@ -17,7 +17,7 @@ export const StudentProvider = ({ children }) => {
         []
     )
 
-    const contextValue = { studentList, createStudent, deleteStudent, getStudents };
+    const contextValue = { studentList, isLoading, createStudent, deleteStudent, getStudents };
     return (
 
         <StudentContext.Provider value={contextValue}> {children} </StudentContext.Provider>

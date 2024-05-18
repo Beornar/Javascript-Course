@@ -3,7 +3,7 @@ import StudentContext from "../../../hooks/contexts/student/StudentContext";
 
 const StudentForm = () => {
 
-    const { createStudent } = useContext(StudentContext);
+    const { createStudent, isLoading } = useContext(StudentContext);
 
     const [studentInput, setStudentInput] = useState({ studentName: "", course: "", instructor: "" });
     const [studentInputErr, setStudentInputErr] = useState({ studentName: false, course: false, instructor: false });
@@ -58,7 +58,7 @@ const StudentForm = () => {
                 />
                 {studentInputErr.instructor && <p className="input-error">Enter a valid instructor!</p>}
             </div>
-            <input type="submit" value="Add Student" onClick={addStudent} />
+            {isLoading ? <p>Loading...</p> : <input type="submit" value="Add Student" onClick={addStudent} />}
         </form>
     )
 }
