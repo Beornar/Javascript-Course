@@ -1,11 +1,9 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { postStudent, deleteStudent as deleteStudentAPI, getStudents as getStudentsAPI } from '../../network/requests/studentRequests';
 
 
 const useStudents = () => {
-
-    const apiURL = import.meta.env.VITE_API_URL;
-    console.log(apiURL);
 
     const [studentList, setStudentList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -13,11 +11,8 @@ const useStudents = () => {
     const createStudent = async (student) => {
         try {
             setIsLoading(true);
-            const response = await axios.post(`${apiURL}/students`, student);
-            if (response.status !== 201) {
-                throw new Error("Student can not be created.");
-            }
-            setStudentList(prevStudentList => [...prevStudentList, response.data]);
+            const newStudent = await postStudent(student);
+            setStudentList(prevStudentList => [...prevStudentList, newStudent]);
         } catch (error) {
             console.log(error);
         }
@@ -29,10 +24,7 @@ const useStudents = () => {
     const deleteStudent = async (studentId) => {
         try {
             setIsLoading(true);
-            const response = await axios.delete(`${apiURL}/students/${studentId}`);
-            if (response.status !== 200) {
-                throw new Error("Student can not be deleted.");
-            }
+            await deleteStudentAPI(studentId);
             setStudentList(
                 (prevStudentList) => {
                     return prevStudentList.filter(
@@ -52,11 +44,8 @@ const useStudents = () => {
     const getStudents = async () => {
         try {
             setIsLoading(true);
-            const response = await axios(`${apiURL}/students`);
-            if (response.status !== 200) {
-                throw new Error("Can not access student list.");
-            }
-            setStudentList(response.data);
+            const students = await getStudentsAPI();
+            setStudentList(students);
         } catch (error) {
             console.log(error);
         }
