@@ -9,11 +9,11 @@ const useStudents = () => {
     const createStudent = async (student) => {
         try {
             setIsLoading(true);
-            const response = await axios.post("http://localhost:5050/students", student)
+            const response = await axios.post("http://localhost:5050/students", student);
             if (response.status !== 201) {
                 throw new Error("Student can not be created.");
             }
-            setStudentList(prevStudentList => [...prevStudentList, response.data])
+            setStudentList(prevStudentList => [...prevStudentList, response.data]);
         } catch (error) {
             console.log(error);
         }
