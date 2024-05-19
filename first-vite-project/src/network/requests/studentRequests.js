@@ -24,7 +24,6 @@ export const getStudentById = async (studentID) => {
 
     } catch (error) {
         console.log("getStudentById error", error);
-
     }
 }
 
@@ -41,16 +40,16 @@ export const postStudent = async (newStudent) => {
     }
 }
 
-export const deleteStudent = async (studentId) => { 
+export const deleteStudent = async (studentId) => {
     try {
         const response = await baseService.delete(`/students/${studentId}`);
         if (response.status !== 200) {
-            throw new Error ("Can not delete the student");
+            throw new Error("Can not delete the student");
         }
         return response.data;
-        
+
     } catch (error) {
         console.log("deleteStudent error", error);
-        
+
     }
 }

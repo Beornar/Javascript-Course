@@ -1,6 +1,5 @@
-import axios from 'axios';
 import { useState } from 'react';
-import { postStudent, deleteStudent as deleteStudentAPI, getStudents as getStudentsAPI } from '../../network/requests/studentRequests';
+import { deleteStudent as deleteStudentAPI, getStudents as getStudentsAPI, postStudent } from '../../network/requests/studentRequests';
 
 
 const useStudents = () => {
