@@ -1,7 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
 
+
 const useStudents = () => {
+
+    const apiURL = import.meta.env.VITE_API_URL;
+    console.log(apiURL);
 
     const [studentList, setStudentList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -9,7 +13,7 @@ const useStudents = () => {
     const createStudent = async (student) => {
         try {
             setIsLoading(true);
-            const response = await axios.post("http://localhost:5050/students", student);
+            const response = await axios.post(`${apiURL}/students`, student);
             if (response.status !== 201) {
                 throw new Error("Student can not be created.");
             }
@@ -25,7 +29,7 @@ const useStudents = () => {
     const deleteStudent = async (studentId) => {
         try {
             setIsLoading(true);
-            const response = await axios.delete(`http://localhost:5050/students/${studentId}`);
+            const response = await axios.delete(`${apiURL}/students/${studentId}`);
             if (response.status !== 200) {
                 throw new Error("Student can not be deleted.");
             }
@@ -48,7 +52,7 @@ const useStudents = () => {
     const getStudents = async () => {
         try {
             setIsLoading(true);
-            const response = await axios("http://localhost:5050/students");
+            const response = await axios(`${apiURL}/students`);
             if (response.status !== 200) {
                 throw new Error("Can not access student list.");
             }
@@ -60,7 +64,6 @@ const useStudents = () => {
             setIsLoading(false);
         }
     }
-
 
     return { studentList, isLoading, createStudent, deleteStudent, getStudents }
 }
